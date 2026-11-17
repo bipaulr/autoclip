@@ -1,0 +1,12 @@
+name: podcast_business
+description: Mark Manson, Iced Coffee Hour, business and self-improvement podcasts
+focus: >-
+  contrarian takes, a story with a twist, specific numbers or money, practical advice
+  that fits in one breath. Must make sense without the rest of the episode.
+hook_tone: bold claim or surprising number, calm and confident
+weights:
+  llm: 0.85
+  loudness: 0.1
+  chat: 0.05
+caption_presets: [clean_white, minimal_lower, neon_box]
+max_seconds: 59

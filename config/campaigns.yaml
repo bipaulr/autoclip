@@ -1,0 +1,27 @@
+# Campaign listings (no marketplace offers a public listings API; keep this up to date from their pages).
+# Set joined: true only after YOU have joined the campaign on the marketplace and accepted its terms.
+# source_channels: where the footage must come from (Twitch login, YouTube channel id UC..., or Kick slug).
+# rules_text is parsed by the LLM into a structured brief at import; a hand-written `brief` wins over it.
+campaigns:
+  - marketplace: content_rewards
+    id: example-streamer-pool
+    name: Example Streamer Pool Campaign
+    url: https://example.com/campaigns/example-streamer-pool
+    creator: ExampleStreamer
+    niche: irl_streamer
+    budget_total: 5000
+    starts: 2026-11-01
+    ends: 2026-12-01
+    allowed_platforms: [instagram, youtube]
+    source_channels:
+      - {platform: twitch, channel_id: examplestreamer}
+    rules_text: >-
+      Any clip featuring ExampleStreamer as the main focus. Name them in the caption and use
+      #ExampleStreamer. Reels and Shorts only. No reposts, no botting. Submit within 30 minutes.
+    brief:
+      platforms: [instagram, youtube]
+      required_hashtags: ["#ExampleStreamer"]
+      name_in_caption: ExampleStreamer
+      ai_generated_allowed: false
+      submit_within_minutes: 30
+    joined: false

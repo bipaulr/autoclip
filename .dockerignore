@@ -1,0 +1,12 @@
+.env
+.env.*
+secrets/
+.venv/
+.git/
+__pycache__/
+.pytest_cache/
+media/
+sources.yaml
+web/
+backups/
+.claude/

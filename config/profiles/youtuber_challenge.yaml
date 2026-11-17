@@ -1,0 +1,12 @@
+name: youtuber_challenge
+description: MrBeast and Roblox creators
+focus: >-
+  high stakes, money or prizes on the line, big reveals, eliminations, clear payoffs.
+  The clip must show both the setup and the result.
+hook_tone: stakes-first, curiosity gap ("he had 10 seconds to...")
+weights:
+  llm: 0.7
+  loudness: 0.2
+  chat: 0.1
+caption_presets: [clean_white, impact_yellow, bold_pop]
+max_seconds: 59

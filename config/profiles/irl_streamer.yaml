@@ -1,0 +1,12 @@
+name: irl_streamer
+description: IShowSpeed, Kai Cenat, N3on style streams
+focus: >-
+  reactions, chaos, surprising guests, pranks, arguments, hype moments, the streamer
+  losing it, chat going wild. The first 2 seconds must already be loud or surprising.
+hook_tone: hype, all caps energy, short punchy words
+weights:            # how the final score blends the LLM's virality with signal z-scores
+  llm: 0.55
+  loudness: 0.2
+  chat: 0.25
+caption_presets: [bold_pop, neon_box, impact_yellow]
+max_seconds: 59

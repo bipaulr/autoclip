@@ -1,0 +1,13 @@
+name: brand_story
+description: Sponsored brand stories (e.g. Marlon x natural diamonds in Botswana)
+focus: >-
+  genuine reactions, discoveries and explanations that carry the campaign's message (natural diamonds
+  helping Botswana: education, infrastructure, community, wildlife); human moments with local people
+  told with dignity; must keep the original meaning, no misleading edits.
+hook_tone: accurate and warm; curiosity without sensationalism, never clickbait or exaggeration
+weights:
+  llm: 0.8
+  loudness: 0.2
+  chat: 0.0
+caption_presets: [clean_white, minimal_lower]
+max_seconds: 59

@@ -1,0 +1,76 @@
+:root {
+  --bg: #f6f6f4;
+  --panel: #ffffff;
+  --ink: #1b1b1a;
+  --muted: #6b6b66;
+  --line: #e3e2dd;
+  --accent: #2f6fdb;
+  --good: #1f8a4c;
+  --warn: #b5541a;
+  --bad: #c0362c;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141413;
+    --panel: #1d1d1b;
+    --ink: #ecebe6;
+    --muted: #9b9a94;
+    --line: #2f2f2c;
+    --accent: #6b9cf0;
+    --good: #4cc27f;
+    --warn: #e08a4d;
+    --bad: #ef6a5f;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+a { color: var(--accent); }
+button, input, select { font: inherit; }
+button { border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 6px; padding: 5px 10px; cursor: pointer; }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button.danger { background: var(--bad); border-color: var(--bad); color: #fff; }
+button:disabled { opacity: 0.5; cursor: default; }
+input { border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 6px; padding: 6px 8px; }
+
+.shell { display: grid; grid-template-columns: 200px minmax(0, 1fr); min-height: 100vh; }
+nav { border-right: 1px solid var(--line); padding: 16px 10px; background: var(--panel); }
+nav h1 { font-size: 17px; margin: 0 8px 14px; }
+nav button { display: block; width: 100%; text-align: left; border: 0; background: none; padding: 7px 8px; border-radius: 6px; }
+nav button.on { background: var(--bg); font-weight: 600; }
+main.content { padding: 20px 24px; min-width: 0; overflow-x: auto; }
+h2 { font-size: 18px; margin: 0 0 14px; }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-bottom: 18px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.card .n { font-size: 22px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.card .l { color: var(--muted); font-size: 12px; }
+table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; color: var(--muted); font-weight: 600; }
+td.num { font-variant-numeric: tabular-nums; text-align: right; }
+.pill { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 99px; border: 1px solid var(--line); }
+.pill.posted, .pill.passed, .pill.joined, .pill.scheduled, .pill.active { color: var(--good); border-color: var(--good); }
+.pill.held, .pill.pending, .pill.testing { color: var(--warn); border-color: var(--warn); }
+.pill.blocked, .pill.failed, .pill.paused, .pill.rejected { color: var(--bad); border-color: var(--bad); }
+.muted { color: var(--muted); }
+.warn { color: var(--bad); }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.gallery video { width: 100%; aspect-ratio: 9 / 16; background: #000; border-radius: 8px; }
+.cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+.cal .day { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 8px; min-height: 110px; }
+.cal .day b { font-size: 12px; color: var(--muted); }
+.cal .item { font-size: 12px; margin-top: 4px; }
+.bars { display: flex; align-items: flex-end; gap: 3px; height: 140px; padding: 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+.bars div { flex: 1; background: var(--accent); min-height: 1px; border-radius: 2px 2px 0 0; }
+.login { display: grid; place-items: center; min-height: 100vh; }
+.login form { width: 320px; display: grid; gap: 10px; }
+.login h1 { margin: 0 0 6px; }
+@media (max-width: 760px) {
+  .shell { grid-template-columns: 1fr; }
+  nav { border-right: 0; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 4px; }
+  nav h1 { width: 100%; }
+  nav button { width: auto; }
+  main.content { padding: 16px; }
+  table { display: block; overflow-x: auto; }
+  .cal { grid-template-columns: 1fr; }
+}

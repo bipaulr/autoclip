@@ -1,0 +1,39 @@
+# The rights allowlist. autoclip only processes videos that pass one of these three bases.
+# Edit freely; changes are picked up on the next discovery run.
+
+# Applies to every source.
+min_duration_minutes: 8
+
+# 1. Automatic: videos whose owner published them under a Creative Commons (CC BY) licence.
+#    The licence is verified per video through the YouTube API, and the required
+#    attribution text is stored with the video for the publish step.
+creative_commons:
+  enabled: false   # off: not in the plan's rights basis; kept for free test footage
+  queries:            # rotated daily; each search costs 100 of the 10,000 daily quota units
+    - podcast interview
+    - conference talk
+    - lecture
+    - documentary
+    - tech talk
+    - panel discussion
+  max_searches_per_run: 3
+  max_age_days: 30
+  min_views: 1000
+  languages: [en]      # two-letter codes; remove the line to allow any language
+  blocked_channels: []   # channel IDs (UC...) to never use, e.g. channels that mislabel others' work
+
+# 2. Creators who gave you permission. "basis" is required: say how and when.
+# - platform: youtube
+#   channel_id: UCxxxxxxxxxxxxxxxxxxxxxx
+#   name: Some Creator
+#   basis: "written permission by email, 2026-11-01"
+channels: []
+
+# 3. Paid clipping campaigns you joined. Only active between starts and ends.
+# - platform: youtube
+#   channel_id: UCxxxxxxxxxxxxxxxxxxxxxx
+#   name: Some Campaign
+#   basis: "campaign terms accepted on <platform>, 2026-11-01"
+#   starts: 2026-11-01
+#   ends: 2026-12-01
+campaigns: []

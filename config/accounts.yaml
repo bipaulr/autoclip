@@ -1,0 +1,15 @@
+# Posting accounts. One niche per account; campaigns check niche fit, so don't mix niches.
+# credentials: the env prefix holding this account's keys (IG_* or YOUTUBE_* in .env).
+accounts:
+  - platform: instagram
+    handle: "@your_instagram"
+    niche: irl_streamer,podcast_business,brand_story
+    style_preset: bold_pop
+    daily_cap: 8  # synced into the DB on every start: change it here, not in the DB
+    credentials: IG
+  - platform: youtube
+    handle: "@your_youtube"
+    niche: irl_streamer,podcast_business,brand_story
+    style_preset: impact_yellow
+    daily_cap: 8
+    credentials: YOUTUBE
